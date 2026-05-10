@@ -1,0 +1,26 @@
+# WACCM-X Skill
+
+Progressive-disclosure skill for WACCM-X, the extended Whole Atmosphere Community Climate Model that reaches into the ionosphere and thermosphere (~500–700 km).
+
+> **WACCM-X is not a separate repo.** It lives inside [ESCOMP/CAM](https://github.com/ESCOMP/CAM). Use [cesm-skill](https://github.com/Earth-Space-Modeling-skills/cesm-skill) and [cam-skill](https://github.com/Earth-Space-Modeling-skills/cam-skill) for build mechanics.
+
+> **Skill author:** Koutian Wu (ktwu01@gmail.com)
+> **Skill version:** 0.1.0-scaffold
+
+## What This Is
+
+A guide for researchers who want to run CESM/CAM with a WACCM-X compset for ionosphere–thermosphere–mesosphere coupling studies, space weather, or upper-atmosphere science.
+
+## Status
+
+Scaffold. Source-grounded routing verified. Operational depth (compset enumeration, IT-region debugging gotchas, geomagnetic input setup) being filled in.
+
+## Related skills in this org
+
+- [waccm-skill](https://github.com/Earth-Space-Modeling-skills/waccm-skill)
+- [cam-skill](https://github.com/Earth-Space-Modeling-skills/cam-skill)
+- [cesm-skill](https://github.com/Earth-Space-Modeling-skills/cesm-skill)
+
+## License
+
+MIT (skill content). WACCM-X source is governed by the CAM/CESM license.
