@@ -32,7 +32,7 @@ tags:
 
 **Important:** WACCM-X is **not a separate code repository**. It is a CAM compset and namelist option set, with WACCM-X-specific physics modules under `src/physics/waccm/`. To run it you follow the standard CESM/CAM workflow and select a WACCM-X compset.
 
-**What WACCM-X does:** Adds an ionosphere–thermosphere extension to WACCM. Solves prognostic equations for major neutral species (O, O2, N2) with major ion species (O+, NO+, O2+, N2+) and electrons; computes ambipolar diffusion and ion drag self-consistently; couples to a dynamo electric-field solver. Used to study lower-atmosphere driving of the upper atmosphere (SSWs, planetary waves, tides), space weather, and IT-region density structures.
+**What WACCM-X does:** Adds an ionosphere–thermosphere extension to WACCM. Solves prognostic equations for major neutral species (O, O2, N2) and ion species (O+, NO+, O2+, N2+; WACCM-X v2.0+ also includes H+ and He+ for plasmasphere coupling) plus electrons. Computes ambipolar diffusion and ion drag self-consistently; couples to a dynamo electric-field solver. Used to study lower-atmosphere driving of the upper atmosphere (SSWs, planetary waves, tides), space weather, and IT-region density structures.
 
 **Who this skill is for:** Researchers in space physics, aeronomy, and IT coupling who want to use WACCM-X for science runs.
 
@@ -68,7 +68,7 @@ tags:
 
 - `src/physics/waccm/`, WACCM-X-specific physics (ion drag, ambipolar diffusion, electrodynamics interface)
 - `src/chemistry/pp_waccm_*`, WACCM-X-relevant chemistry preprocessor outputs
-- `src/dynamics/...`, increased vertical levels for WACCM-X (typically 130+ levels)
+- Vertical level count is configured via `vcoord` files and namelist, not by code in `src/dynamics/`. WACCM-X v2.0 standard is **L126** (126 hybrid levels reaching ~500–700 km). The dycore source is largely shared with CAM/WACCM.
 - `bld/namelist_files/`, look for `waccmx` keyword in default namelist files
 
 ---
@@ -94,6 +94,14 @@ tags:
 | reference/time-stepping.md | Sub-stepping, CFL |
 | reference/debugging.md | Common WACCM-X failure modes |
 
+## Critical agent gotchas (Gemini-reviewed)
+
+- **L126 is the WACCM-X v2.0 standard vertical grid.** Match `ncdata` to the level count.
+- **High-latitude convection model is a primary toggle.** Choose Heelis or Weimer in the namelist (`electrodynamics_option`-style switch); default differs by tag.
+- **Forcing inputs:** Kp and F10.7 are needed; the model also consumes the **Ap** index (3-hourly) for several parameterizations. Search for `kp_data` and `ap_data` in the namelist files.
+- **Output altitude conversion:** WACCM-X writes on pressure levels. For altitude analysis, the geometric height field is `Z3` or `ZGMID` depending on tag and the `addfld` registration; do not assume a fixed name.
+- **Comparison with TIE-GCM:** use `NCAR/gcmprocpy` for shared post-processing.
+
 ## Status
 
-Scaffold (v0.1.0-scaffold). Routing and source-grounded surface verified. Operational depth being filled in.
+Scaffold (v0.1.0-scaffold). Source-grounded routing and surface, with Gemini critique pass on 2026-05-09 to correct level count, ion species list, and code-path attribution. Operational depth being filled in.
