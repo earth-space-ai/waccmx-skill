@@ -2,10 +2,19 @@
 
 Progressive-disclosure skill for WACCM-X, the extended Whole Atmosphere Community Climate Model that reaches into the ionosphere and thermosphere (~500–700 km).
 
-> **WACCM-X is not a separate repo.** It lives inside [ESCOMP/CAM](https://github.com/ESCOMP/CAM). Use [cesm-skill](https://github.com/Earth-Space-Modeling-skills/cesm-skill) and [cam-skill](https://github.com/Earth-Space-Modeling-skills/cam-skill) for build mechanics.
+> **WACCM-X is not a separate repo.** It lives inside [ESCOMP/CAM](https://github.com/ESCOMP/CAM). Use [cesm-skill](https://github.com/earth-space-ai/cesm-skill) and [cam-skill](https://github.com/earth-space-ai/cam-skill) for build mechanics.
 
 > **Skill author:** Koutian Wu (ktwu01@gmail.com)
 > **Skill version:** 0.1.0-scaffold
+
+> ⚠️ **Disclaimer — please read before using this skill.**
+> This skill is **not a gold-standard reference**. It is a helper that lowers
+> the barrier for new users to **get their hands dirty** with the model. AI
+> agents (and the humans drafting this material) make mistakes; commands, file
+> paths, namelist options, and physics explanations here can be wrong,
+> incomplete, or out of date. **Always cross-check with the official model
+> documentation, the source code, and a human expert before trusting any
+> output for research, publication, or operational use.**
 
 ## What This Is
 
@@ -17,9 +26,9 @@ Scaffold. Source-grounded routing verified. Operational depth (compset enumerati
 
 ## Related skills in this org
 
-- [waccm-skill](https://github.com/Earth-Space-Modeling-skills/waccm-skill)
-- [cam-skill](https://github.com/Earth-Space-Modeling-skills/cam-skill)
-- [cesm-skill](https://github.com/Earth-Space-Modeling-skills/cesm-skill)
+- [waccm-skill](https://github.com/earth-space-ai/waccm-skill)
+- [cam-skill](https://github.com/earth-space-ai/cam-skill)
+- [cesm-skill](https://github.com/earth-space-ai/cesm-skill)
 
 ## License
 
