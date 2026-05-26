@@ -30,6 +30,33 @@ Scaffold. Source-grounded routing verified. Operational depth (compset enumerati
 - [cam-skill](https://github.com/earth-space-ai/cam-skill)
 - [cesm-skill](https://github.com/earth-space-ai/cesm-skill)
 
+## Acknowledgments
+
+**Gold-standard references for WACCM-X** (use these to cross-check anything in this skill):
+- WACCM-X project page (NCAR HAO): https://www2.hao.ucar.edu/modeling/waccm-x
+- ESCOMP/CAM repository (WACCM-X lives here): https://github.com/ESCOMP/CAM
+- CAM User's Guide (covers WACCM-X compsets): https://ncar.github.io/CAM/doc/build/html/
+- CEDAR community portal (ionosphere-thermosphere-mesosphere): https://cedarscience.org/
+
+This scaffold exists only because of the work of other people, and any value
+it has is borrowed from theirs.
+
+- **NSF NCAR** and the **High Altitude Observatory (HAO)** for developing
+  the extended Whole Atmosphere Community Climate Model (WACCM-X) inside
+  [ESCOMP/CAM](https://github.com/ESCOMP/CAM), including the
+  ionosphere-thermosphere coupling, geomagnetic input handling, and the
+  upper-atmosphere compsets this skill documents.
+- The **CEDAR** community and the broader ionosphere-thermosphere-mesosphere
+  research community whose use of WACCM-X drives its development.
+- The maintainers of `waccm-skill`, `cam-skill`, and `cesm-skill` for the
+  upstream build / run mechanics this skill routes users to.
+- **Zesen Huang** for [laps-skill](https://github.com/huangzesen/laps-skill),
+  the progressive-disclosure layout this repo borrows.
+
+Any errors, oversimplifications, or out-of-date claims in this skill are the
+skill author's responsibility, not the upstream community's. This is a
+scaffold; operational depth is being filled in iteratively.
+
 ## License
 
 MIT (skill content). WACCM-X source is governed by the CAM/CESM license.
